@@ -14,6 +14,8 @@ body {
   font-size: 100%;
   font-family: "Montserrat", sans-serif;
   line-height: 1.5;
+  overflow-y: hidden;
+  position: relative;
 }
 
 ul {
@@ -22,17 +24,74 @@ ul {
   padding: 0;
 }
 
-.card {
-  position: relative;
-  width: 80%;
+.start p {
+  font-size: 7rem;
+  font-weight: 700;
+  text-align: center;
+  opacity: 0.1;
+  position: absolute;
+  top: 8rem;
+  left: 2rem;
+  z-index: -1;
+}
+
+.meal-btn {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  width: 80px;
+  height: 80px;
+  border: none;
+  border-radius: 50px;
+  background-color: #ccc;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 10px 12px rgba(0, 0, 0, 0.3);
+  transition: all 250ms ease;
+}
+
+.meal-btn i {
+  font-size: 2rem;
+  opacity: 0.5;
+}
+
+.meal-btn:hover {
+  opacity: 0.8;
+  background-color: #d8d8d8;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+}
+
+.meal-btn:focus {
+  outline: none;
+}
+
+.meal-btn:active {
+  transform: scale(0.9);
+}
+
+.side-info {
+  position: fixed;
+  right: -200px;
+  top: 100px;
+  width: 10%;
+  font-size: 0.8rem;
+}
+
+.menu {
+  display: none;
+  z-index: 1;
+  width: 70%;
   margin: auto;
+}
+
+.card {
   background-color: #fff;
   display: grid;
   grid-template-columns: 1fr 2fr;
-  grid-column-gap: 3rem;
-  padding: 3rem;
+  grid-column-gap: 4rem;
+  padding: 2rem 4rem;
   margin-top: 2rem;
-  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2), 0px 40px 40px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
 }
 
 .left {
@@ -52,11 +111,36 @@ ul {
   margin-bottom: 2rem;
 }
 
-footer {
-  position: relative;
-  top: 3rem;
-  margin-bottom: 1rem;
+.video {
+  margin: auto;
   text-align: center;
+  margin-top: 5rem;
+  margin-bottom: 10vh;
+}
+
+.iframe-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  padding-top: 25px;
+}
+
+iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+footer {
+  position: absolute;
+  bottom: -5rem;
+  width: 100%;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #444;
 }
 
 @media screen and (max-width: 768px) {
@@ -68,5 +152,9 @@ footer {
 
   .meal-name {
     text-align: center;
+  }
+
+  .start p {
+    font-size: 5rem;
   }
 }
